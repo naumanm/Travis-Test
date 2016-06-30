@@ -1,3 +1,4 @@
 #!/bin/bash
 echo "hello World"
-echo $ACCESSKEY
+echo $access_key_id
+echo $secret_access_key
