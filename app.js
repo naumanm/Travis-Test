@@ -1,25 +1,7 @@
 window.onload = function() {
 
   function main() {
-    var service = configAWS();
     showCurrentVersion();
-  }
-
-  function configAWS() {
-    var config = getConfigObj();
-    var awsKeyObj = {accessKeyId: config.aws.accessKey, secretAccessKey: config.aws.secretAccessKey};
-    AWS.config.update(awsKeyObj);
-    return new AWS.S3({params: {Bucket: config.aws.bucket}});
-  }
-
-  function getConfigObj() {
-    return configObj = {
-      aws: {
-        accessKey: '',
-        secretAccessKey: '',
-        bucket: ''
-      }
-    };
   }
 
   function showCurrentVersion() {

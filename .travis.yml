@@ -2,10 +2,11 @@ language: node_js
 node_js:
   - "5.10.0"
 
+script: ./run_build.sh
+
 before_deploy:
   - zip -r latest *
   - mkdir -p dpl_cd_upload
-  - mv latest.zip dpl_cd_upload/latest.zip
 
 deploy:
   - provider: s3
