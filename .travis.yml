@@ -9,9 +9,6 @@ before_script:
 
 script: ../run_build.sh
 
-before_deploy:
-  - zip -r latest *
-
 deploy:
   - provider: s3
   - access_key_id: access_key_id
