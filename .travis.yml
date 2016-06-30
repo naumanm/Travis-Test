@@ -7,8 +7,7 @@ before_script:
   - mkdir -p build_for_deploy
   - cd build_for_deploy
 
-script:
-  - ./run_build.sh
+script: ../run_build.sh
 
 before_deploy:
   - zip -r latest *
