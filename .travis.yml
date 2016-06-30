@@ -1,3 +1,19 @@
 language: node_js
 node_js:
   - "5.10.0"
+
+before_deploy:
+  - zip -r latest *
+  - mkdir -p dpl_cd_upload
+  - mv latest.zip dpl_cd_upload/latest.zip
+
+deploy:
+  - provider: s3
+    access_key_id:
+    secret_access_key: &1
+      secure:
+    local_dir: dpl_cd_upload
+    skip_cleanup: true
+    on: &2
+      repo: naumanm/Travis-Test
+    bucket: travis-prototype
