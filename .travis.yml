@@ -2,6 +2,9 @@ language: node_js
 node_js:
   - "5.10.0"
 
+before_script:
+  - chmod +x ./run_build.sh
+
 script: ./run_build.sh
 
 before_deploy:
