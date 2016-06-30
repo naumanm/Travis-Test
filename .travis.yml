@@ -8,12 +8,15 @@ before_script:
 script:
   - ./run_build.sh
 
+before_deploy:
+  - mkdir -p build_for_deploy
+
 deploy:
   - provider: s3
     access_key_id: access_key_id
-    secret_access_key:
+    secret_access_key: &1
       secure: secret_access_key
-    local_dir: release
+    local_dir: build_for_deploy
     skip_cleanup: true
     on: &2
       repo: naumanm/Travis-Test
