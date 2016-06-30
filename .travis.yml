@@ -11,8 +11,8 @@ script: ../run_build.sh
 
 deploy:
   - provider: s3
-  - access_key_id: access_key_id
-  - secret_access_key:
+  - access_key_id: AKIAIABEZL7YS3EAQN6A
+  - secret_access_key: &1
       secure: secret_access_key
   - local_dir: build_for_deploy
   - skip_cleanup: true
