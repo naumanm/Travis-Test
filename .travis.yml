@@ -1,25 +1,25 @@
 language: node_js
 node_js:
-  "5.10.0"
+  - "5.10.0"
 
 before_script:
-  chmod +x ./run_build.sh
-  mkdir -p build_for_deploy
-  cd build_for_deploy
+  - chmod +x ./run_build.sh
+  - mkdir -p build_for_deploy
+  - cd build_for_deploy
 
 script:
-  ./run_build.sh
+  - ./run_build.sh
 
 before_deploy:
-  zip -r latest *
+  - zip -r latest *
 
 deploy:
-  provider: s3
-  access_key_id: access_key_id
-  secret_access_key:
-    secure: secret_access_key
-  local_dir: build_for_deploy
-  skip_cleanup: true
-  on: &2
-    repo: naumanm/Travis-Test
-  bucket: travis-prototype
+  - provider: s3
+  - access_key_id: access_key_id
+  - secret_access_key:
+      secure: secret_access_key
+  - local_dir: build_for_deploy
+  - skip_cleanup: true
+  - on: &2
+      repo: naumanm/Travis-Test
+  - bucket: travis-prototype
