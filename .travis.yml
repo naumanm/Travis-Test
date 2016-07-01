@@ -10,7 +10,9 @@ before_script:
   - npm install -g grunt-cli
   - chmod +x ./run_build.sh
 
-script: ./run_build.sh
+script:
+  - which grunt
+  - ./run_build.sh
 
 deploy:
   - provider: s3
