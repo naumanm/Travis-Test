@@ -3,9 +3,9 @@ module.exports = function (grunt) {
   require('load-grunt-tasks')(grunt);
 
   grunt.initConfig({
-    pkg: grunt.file.readJSON('package.json')
+    pkg: grunt.file.readJSON('package.json'),
 //    config: require('./grunt/config'),
-//    jshint: require('./grunt/jshint')
+    jshint: require('./grunt/jshint')
   });
 
   grunt.registerTask('test', ['jshint']);
