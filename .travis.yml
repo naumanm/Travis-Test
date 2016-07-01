@@ -12,6 +12,7 @@ before_script:
 
 script:
   - which grunt
+  - grunt test
   - ./run_build.sh
 
 deploy:
