@@ -6,8 +6,7 @@ module.exports = {
     },
     src: {
         src: [ 'Gruntfile.js',
-            'app/controllers/{,*/}*.js',
-            'app/services/{,*/}*.js'
+            '../{,*/}*.js'
         ]
     },
     test: {

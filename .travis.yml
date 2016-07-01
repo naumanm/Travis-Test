@@ -6,6 +6,7 @@ before_script:
   - chmod +x ./run_build.sh
   - mkdir -p build_for_deploy
   - cd build_for_deploy
+  - npm install grunt-cli -g
 
 script: ../run_build.sh
 
