@@ -8,7 +8,7 @@ module.exports = function (grunt) {
     jshint: require('./grunt/jshint')
   });
 
-  grunt.registerTask('test_local', ['jshint']);
+  grunt.registerTask('test', ['jshint']);
 
   grunt.registerTask('deploy-edge', function() {
     grunt.config.merge({
