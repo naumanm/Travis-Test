@@ -2,12 +2,15 @@ language: node_js
 node_js:
   - "5.10.0"
 
-before_install: npm install -g grunt-cli
+before_install:
+  - npm install -g grunt-cli
+  - npm install -g load-grunt-tasks
 
 install: npm install
 
 before_script:
   - npm install -g grunt-cli
+  - npm install -g load-grunt-tasks
   - chmod +x ./run_build.sh
 
 script:
