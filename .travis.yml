@@ -1,20 +1,22 @@
 language: node_js
-node_js:
-  - "5.10.0"
-
-before_script:
-  - npm install
-
-script:
-  - grunt test
-
-deploy:
+node_js: 
+- 5.10.0
+script: 
+- grunt test
+before_deploy: 
+- zip -r latest *
+- mkdir -p deploy
+- mv latest.zip deploy/latest.zip
+deploy: 
+  matrix: 
   - provider: s3
-  - access_key_id: AKIAIABEZL7YS3EAQN6A
-  - secret_access_key: &1
+    access_key_id: AKIAIABEZL7YS3EAQN6A
+    secret_access_key: 
       secure: secret_access_key
-  - local_dir: build_for_deploy
-  - skip_cleanup: true
-  - on: &2
+    local_dir: deploy
+    skip_cleanup: true
+    on: 
       repo: naumanm/Travis-Test
-  - bucket: travis-prototype
+    bucket: travis-prototype
+  secret_access_key: 
+    secure: EVYIpHw4CCSrrSS2ssJ4Ynst5CJFv/4aliTyAz0eC64vzM+7PfFfMq8fc33XsogDEiXjCSa1MT4ObncNCHKV1vLnoYnbzEFAiVcbxHxG2/YygFPGoYkPe2TXADSygTBgT4E4riDoUQYujVn3akjU55Phyt/1/RXy6sCPOE6UOyJkbtnTHMT4wyUj3IEqPpOuH+bC/omXaHyFPjrEbzl+9UvKdsXj7tvKCSJK/GCSwo4sypCBEQuEXXLraTTtvFMWNTYWp4fXmq97J/OeToYZ6DSa0vBL9u6MzQNRfXZMQMbhOkaNL5IKjUSrSz77En5g2OiE/bKy2Tvi8cQHIxAMmooW/DOLMcvT+AgKiDzO0fA/XmddrThpQDoWY6Eesxu3hc8H5M96lZ6XLTGR/14VbCyh7TOagKhuvKbDE1i3pHy/RHzlth2OHUqJX0uRFxXeLgTyu2UnebAUTi4jS69PcuP1K9DDCCft42LOq7tGQsMTKdH4DuH4WuCV6K6fQlK9+1tIjljSYudcchrnr8hckOIqdtmkd+cWzqRheqhmIPjTu9MB1IyIMWuFHQllP1JlIgM3EGv8mdgwt/9XbfxCBJM7G47Le3Ea5dkLAl7RiieStcsTA/2RZ+Do/R/SOURyJRdBHQ4ZCe03i1I93Y6i7eVUZjawqXuTq3wki9SfLZ4=
