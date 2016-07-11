@@ -4,7 +4,6 @@ module.exports = function (grunt) {
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-    config: require('./grunt/config'),
     jshint: require('./grunt/jshint')
   });
 
