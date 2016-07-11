@@ -6,11 +6,11 @@ before_install:
   - npm install -g grunt-cli
   - npm install -g load-grunt-tasks
 
-install: npm install
 
 before_script:
   - npm install -g grunt-cli
   - npm install -g load-grunt-tasks
+  - npm install
   - chmod +x ./run_build.sh
 
 script:
