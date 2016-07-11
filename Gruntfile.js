@@ -10,6 +10,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('test', ['jshint']);
 
+/*
   grunt.registerTask('deploy-edge', function() {
     grunt.config.merge({
       config: {
@@ -29,4 +30,5 @@ module.exports = function (grunt) {
     });
     grunt.task.run(['revision', 'replace:base', 'compress', 'aws_s3:default']);
   });
+*/
 };
