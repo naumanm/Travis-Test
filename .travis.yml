@@ -9,10 +9,7 @@ before_script:
   - chmod +x ./run_build.sh
 
 script:
-  - which grunt
-  - ls
   - grunt test
-  - ./run_build.sh
 
 deploy:
   - provider: s3
