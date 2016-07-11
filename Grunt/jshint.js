@@ -10,6 +10,6 @@ module.exports = {
         ]
     },
     test: {
-        src: ['test/unit/{,*/}*.js']
+        src: ['../{,*/}*.js']
     }
 };
