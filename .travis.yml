@@ -2,7 +2,7 @@ language: node_js
 node_js: 
 - 5.10.0
 script: 
-- grunt build
+- grunt deploy-release
 deploy:
   provider: s3
   access_key_id: $aws_access_key_id
