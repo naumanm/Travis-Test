@@ -4,7 +4,8 @@ module.exports = function (grunt) {
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-    jshint: require('./Grunt/jshint')
+    jshint: require('./Grunt/jshint'),
+    aws_s3: require('./grunt/aws_s3')
   });
 
   grunt.registerTask('test', ['jshint']);
@@ -32,7 +33,12 @@ module.exports = function (grunt) {
         versionPath: '/<%= pkg.version %>'
       }
     });
-    grunt.task.run(['aws_s3:default']);
+    grunt.task.run(['aws_s3:default'], ['aws_s3:rootHTML']);
   });
+
+  grunt.registerTask('create_folder', function() {
+    grunt.file.mkdir();
+  });
+
 
 };
