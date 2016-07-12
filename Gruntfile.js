@@ -25,7 +25,7 @@ module.exports = function (grunt) {
   });
 
   grunt.registerTask('create-folders', function () {
-    grunt.file.mkdir(config.aws_s3_path + '/' + config.versionPath);
+    grunt.file.mkdir(aws_s3_path + '/' + versionPath);
   })
 
 };
