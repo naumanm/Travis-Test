@@ -5,9 +5,7 @@ script:
 - grunt test
 before_deploy: 
 - zip -r latest *
-- mkdir -p build
-- mv latest.zip build/latest.zip
-deploy: 
+deploy:
   provider: s3
   access_key_id: $aws_access_key_id
   secret_access_key: $aws_secret_access_key
