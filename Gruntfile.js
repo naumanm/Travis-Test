@@ -5,7 +5,10 @@ module.exports = function (grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     jshint: require('./Grunt/jshint'),
-    aws_s3: require('./Grunt/aws_s3')
+    aws_s3: require('./Grunt/aws_s3'),
+    aws_s3_release_path: 'release',
+    aws_s3_edge_path: 'edge',
+    versionPath: '/<%= pkg.version %>'
   });
 
   grunt.registerTask('test', ['jshint']);
@@ -25,13 +28,7 @@ module.exports = function (grunt) {
   });
 
   grunt.registerTask('create-folders', function () {
-    grunt.config.merge({
-      config: {
-        aws_s3_path: 'release',
-        versionPath: '/<%= pkg.version %>'
-      }
-    });
-    grunt.file.mkdir('<%= process.env["aws_bucket"] %>' + '/' + config.aws_s3_path + '/' + config.versionPath);
+    grunt.file.mkdir('<%= process.env["aws_bucket"] %>' + '/' + config.aws_s3_release_path + '/' + config.versionPath);
   });
 
 };
