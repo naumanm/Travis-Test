@@ -19,7 +19,7 @@ module.exports = {
       expand: true,
       cwd: "dist",
       dest: "lalo",
-      src: ['**/*.html', '**./*.js']
+      src: ['**/*.html', '**/*.js']
     }
     ]
   },
