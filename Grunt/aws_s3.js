@@ -18,7 +18,7 @@ module.exports = {
       action: 'upload',
       expand: true,
       cwd: "dist",
-      dest: "<%= config.aws_s3_path %>/<%= config.versionPath %>",
+      dest: "lalo",
       src: ['**/*.html', '**./*.js']
     }
     ]
