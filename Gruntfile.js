@@ -36,9 +36,4 @@ module.exports = function (grunt) {
     grunt.task.run(['aws_s3:default'], ['aws_s3:rootHTML']);
   });
 
-  grunt.registerTask('create_folder', function() {
-    grunt.file.mkdir();
-  });
-
-
 };
