@@ -4,8 +4,6 @@ module.exports = {
     secretAccessKey: '<%= process.env["aws_secret_access_key"] %>',
     uploadConcurrency: 5,
     downloadConcurrency: 5,
-    access: '<%= process.env["AWS_ACCESS_PERMISSION"] %>',
-    region: '<%= process.env["AWS_REGION"] %>',
     params: {
       CacheControl: 'public, max-age=2592000'
     }
@@ -21,7 +19,7 @@ module.exports = {
       expand: true,
       cwd: "dist",
       dest: "<%= config.aws_s3_path %>/<%= config.versionPath %>",
-      src: ['./*']
+      src: ['**/*.html', '**./*.js']
     }
     ]
   },
