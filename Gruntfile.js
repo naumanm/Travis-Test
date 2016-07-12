@@ -4,8 +4,8 @@ module.exports = function (grunt) {
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-    jshint: require('./Grunt/jshint'),
-    aws_s3: require('./Grunt/aws_s3'),
+    jshint: require('./grunt/jshint'),
+    aws_s3: require('./grunt/aws_s3'),
     replace: require('./grunt/replace')
   });
 
