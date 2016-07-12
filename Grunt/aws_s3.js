@@ -21,25 +21,8 @@ module.exports = {
       expand: true,
       cwd: "dist",
       dest: "<%= config.aws_s3_path %>/<%= config.versionPath %>",
-      src: ['**/*.{png,jpg,jpeg,webp,gif}']
-    },
-      {
-        action: 'upload',
-        expand: true,
-        cwd: "dist",
-        dest: "<%= config.aws_s3_path %>/<%= config.versionPath %>",
-        src: ['**/*.gz', '!**/*.html.gz'],
-        options: {gzip: true}
-      },
-      {
-        action: 'upload',
-        expand: true,
-        cwd: "dist",
-        dest: "<%= config.aws_s3_path %>/<%= config.versionPath %>",
-        src: ['**/*.html.gz'],
-        params: {CacheControl: 'private, no-cache, max-age=0'},
-        options: {gzip: true}
-      }
+      src: ['./*']
+    }
     ]
   },
   rootHTML : {
