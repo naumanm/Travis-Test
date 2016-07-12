@@ -25,7 +25,13 @@ module.exports = function (grunt) {
   });
 
   grunt.registerTask('create-folders', function () {
-    grunt.file.mkdir(aws_s3_path + '/' + versionPath);
-  })
+    grunt.config.merge({
+      config: {
+        aws_s3_path: 'release',
+        versionPath: '/<%= pkg.version %>'
+      }
+    });
+    grunt.file.mkdir('<%= process.env["aws_bucket"] %>' + '/' + config.aws_s3_path + '/' + config.versionPath);
+  });
 
 };
