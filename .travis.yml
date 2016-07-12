@@ -2,6 +2,7 @@ language: node_js
 node_js: 
   5.10.0
 script:
+- grunt create-folders
 - grunt test
 - grunt deploy-release
 deploy:
@@ -9,4 +10,5 @@ deploy:
   access_key_id: $aws_access_key_id
   secret_access_key: $aws_secret_access_key
   bucket: $aws_bucket
+  region: us-west-1
 

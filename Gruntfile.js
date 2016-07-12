@@ -21,7 +21,11 @@ module.exports = function (grunt) {
         versionPath: '/<%= pkg.version %>'
       }
     });
-    grunt.task.run(['aws_s3:default'], ['aws_s3:rootHTML']);
+    grunt.task.run(['aws_s3:default']);
   });
+
+  grunt.registerTask('create-folders', function () {
+    grunt.file.mkdir(config.aws_s3_path + '/' + config.versionPath);
+  })
 
 };
