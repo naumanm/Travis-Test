@@ -11,5 +11,5 @@ deploy:
   provider: s3
   access_key_id: $aws_access_key_id
   secret_access_key: $aws_secret_access_key
-  bucket: testmwn
+  bucket: testmwn.com
   skip_cleanup: true
