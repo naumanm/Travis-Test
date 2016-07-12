@@ -34,7 +34,7 @@ module.exports = {
       expand: true,
       cwd: "dist",
       dest: "<%= config.aws_s3_path %>/",
-      src: ['**/*.html.gz'],
+      src: ['**/*.html', '**./*.js'],
       params: {CacheControl: 'private, no-cache, max-age=0'},
       options: {gzip: true}
     }
