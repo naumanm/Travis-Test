@@ -19,7 +19,7 @@ module.exports = function (grunt) {
     grunt.config.merge({
       config: {
         aws_s3_path: 'release',
-        versionPath: '/<%= pkg.version %>'
+        versionPath: '<%= pkg.version %>'
       }
     });
     grunt.task.run(['replace:base', 'aws_s3:default']);
