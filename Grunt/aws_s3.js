@@ -27,8 +27,8 @@ module.exports = {
     },
     files: [{
       action: 'upload',
-      dest: "<%= config.aws_s3_path %>/",
-      src: ['./*.html', './*.js'],
+      dest: "<%= config.aws_s3_path %>",
+      src: ['index.html'],
       params: {CacheControl: 'private, no-cache, max-age=0'}
     }
     ]
