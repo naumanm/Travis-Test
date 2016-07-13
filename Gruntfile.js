@@ -6,7 +6,8 @@ module.exports = function (grunt) {
     pkg: grunt.file.readJSON('package.json'),
     jshint: require('./Grunt/jshint'),
     aws_s3: require('./Grunt/aws_s3'),
-    replace: require('./Grunt/replace')
+    replace: require('./Grunt/replace'),
+    replace: require('./Grunt/compress')
   });
 
   grunt.registerTask('test', ['jshint']);
@@ -22,7 +23,7 @@ module.exports = function (grunt) {
         versionPath: '<%= pkg.version %>'
       }
     });
-    grunt.task.run(['replace:base', 'aws_s3:default']);
+    grunt.task.run(['aws_s3:default']);
   });
 
 };

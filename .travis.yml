@@ -3,6 +3,7 @@ node_js:
   5.10.0
 script:
 - grunt test
+- grunt build
 - grunt deploy-release
 deploy:
   provider: s3
