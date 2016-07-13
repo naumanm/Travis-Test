@@ -11,12 +11,15 @@ module.exports = {
   default: {
     options: {
       bucket: '<%= process.env["aws_bucket"] %>',
-      differential: true
+      differential: true,
+      gzipRename: 'ext'
     },
     files: [{
       action: 'upload',
+      expand: true,
       dest: "<%= config.aws_s3_path %>/<%= config.versionPath %>/",
-      src: ['./*.html', './*.js']
+      src: ['**/*.gz', '!**/*.html.gz'],
+      options: {gzip: true}
     }
     ]
   }
