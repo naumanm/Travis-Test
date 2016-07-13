@@ -10,14 +10,50 @@ module.exports = {
   },
   default: {
     options: {
-      bucket: '<%= process.env["aws_bucket"] %>',
-      differential: true
+      bucket: '<%= process.env["AWS_BUCKET"] %>',
+      differential: true,
+      gzipRename: 'ext'
     },
     files: [{
       action: 'upload',
-      dest: "<%= config.aws_s3_path %>/<%= config.versionPath %>/",
-      src: ['./*.html', './*.js']
+      expand: true,
+      cwd: "dist",
+      dest: "<%= config.aws_s3_path %>/<%= config.versionPath %>",
+      src: ['**/*.{png,jpg,jpeg,webp,gif}']
+    },
+      {
+        action: 'upload',
+        expand: true,
+        cwd: "dist",
+        dest: "<%= config.aws_s3_path %>/<%= config.versionPath %>",
+        src: ['**/*.gz', '!**/*.html.gz'],
+        options: {gzip: true}
+      },
+      {
+        action: 'upload',
+        expand: true,
+        cwd: "dist",
+        dest: "<%= config.aws_s3_path %>/<%= config.versionPath %>",
+        src: ['**/*.html.gz'],
+        params: {CacheControl: 'private, no-cache, max-age=0'},
+        options: {gzip: true}
+      }
+    ]
+  },
+  rootHTML : {
+    options: {
+      bucket: '<%= process.env["AWS_BUCKET"] %>',
+      differential: true,
+      gzipRename: 'ext'
+    },
+    files: [{
+      action: 'upload',
+      expand: true,
+      cwd: "dist",
+      dest: "<%= config.aws_s3_path %>/",
+      src: ['**/*.html.gz'],
+      params: {CacheControl: 'private, no-cache, max-age=0'},
+      options: {gzip: true}
     }
     ]
-  }
-};
+  }};
