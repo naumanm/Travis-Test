@@ -22,7 +22,6 @@ module.exports = function (grunt) {
         versionPath: '<%= pkg.version %>'
       }
     });
-//    grunt.task.run(['replace:base', 'aws_s3:default', 'aws_s3:rootHTML']);
     grunt.task.run(['replace:base', 'aws_s3:default']);
   });
 

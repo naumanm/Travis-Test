@@ -19,18 +19,5 @@ module.exports = {
       src: ['./*.html', './*.js']
     }
     ]
-  },
-  rootHTML : {
-    options: {
-      bucket: '<%= process.env["aws_bucket"] %>',
-      differential: true
-    },
-    files: [{
-      action: 'upload',
-      dest: "<%= config.aws_s3_path %>",
-      src: ['./*.html'],
-      params: {CacheControl: 'private, no-cache, max-age=0'}
-    }
-    ]
   }
 };
