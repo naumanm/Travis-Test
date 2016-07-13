@@ -7,7 +7,7 @@ module.exports = function (grunt) {
     jshint: require('./Grunt/jshint'),
     aws_s3: require('./Grunt/aws_s3'),
     replace: require('./Grunt/replace'),
-    replace: require('./Grunt/compress')
+    compress: require('./Grunt/compress')
   });
 
   grunt.registerTask('test', ['jshint']);
