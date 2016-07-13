@@ -10,7 +10,7 @@ module.exports = {
   },
   default: {
     options: {
-      bucket: '<%= process.env["AWS_BUCKET"] %>',
+      bucket: '<%= process.env["aws_bucket"] %>',
       differential: true,
       gzipRename: 'ext'
     },
@@ -42,7 +42,7 @@ module.exports = {
   },
   rootHTML : {
     options: {
-      bucket: '<%= process.env["AWS_BUCKET"] %>',
+      bucket: '<%= process.env["aws_bucket"] %>',
       differential: true,
       gzipRename: 'ext'
     },
